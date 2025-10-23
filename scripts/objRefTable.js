@@ -11,7 +11,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text,
 		C3.Behaviors.DragnDrop,
 		C3.Behaviors.Sin,
-		C3.Plugins.Spritefont2,
 		C3.Plugins.NinePatch,
 		C3.Plugins.TiledBg.Cnds.CompareX,
 		C3.Plugins.TiledBg.Acts.SetX,
@@ -38,15 +37,17 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.NinePatch.Acts.MoveToTop,
 		C3.Plugins.Text.Acts.MoveToTop,
 		C3.Plugins.Text.Acts.SetText,
-		C3.Plugins.Text.Acts.SetHeight,
+		C3.Plugins.Text.Acts.SetSize,
+		C3.Plugins.Text.Exps.TextWidth,
 		C3.Plugins.Text.Exps.TextHeight,
-		C3.Plugins.NinePatch.Acts.SetHeight,
+		C3.Plugins.NinePatch.Acts.SetSize,
 		C3.Plugins.System.Cnds.Every,
-		C3.Plugins.Sprite.Acts.MoveToLayer,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.Sprite.Exps.Y
+		C3.Plugins.Sprite.Exps.Y,
+		C3.Plugins.Sprite.Cnds.CompareFrame,
+		C3.Plugins.System.Acts.Wait
 	];
 };
 self.C3_JsPropNameTable = [
@@ -71,15 +72,14 @@ self.C3_JsPropNameTable = [
 	{KratongForDrag: 0},
 	{Sine: 0},
 	{Circle: 0},
-	{SpriteFont: 0},
 	{TextDrag: 0},
-	{EmptySprite1: 0},
 	{Logo: 0},
 	{KratongBackground: 0},
 	{PlayerWishText: 0},
 	{KratongPlayer: 0},
 	{WishBox: 0},
 	{TextInputName: 0},
+	{Firework: 0},
 	{k_num: 0},
 	{text_player_wish: 0}
 ];
@@ -99,13 +99,12 @@ self.InstanceType = {
 	LoyButton: class extends self.ISpriteInstance {},
 	KratongForDrag: class extends self.ISpriteInstance {},
 	Circle: class extends self.ISpriteInstance {},
-	SpriteFont: class extends self.ISpriteFontInstance {},
 	TextDrag: class extends self.ITextInstance {},
-	EmptySprite1: class extends self.ISpriteInstance {},
 	Logo: class extends self.ISpriteInstance {},
 	KratongBackground: class extends self.ISpriteInstance {},
 	PlayerWishText: class extends self.ITextInstance {},
 	KratongPlayer: class extends self.ISpriteInstance {},
-	WishBox: class extends self.IWorldInstance {},
-	TextInputName: class extends self.ITextInputInstance {}
+	WishBox: class extends self.I9PatchInstance {},
+	TextInputName: class extends self.ITextInputInstance {},
+	Firework: class extends self.ISpriteInstance {}
 }
